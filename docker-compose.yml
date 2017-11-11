@@ -8,13 +8,13 @@ services:
       - ./data/db:/data/db
 
   server:
+    image: totran/leanote:latest
     environment:
       - SITE_URL="http://localhost:9000"
       - ADMIN_USERNAME="admin"
     depends_on:
       - db
     restart: always
-    build: .
     ports:
       - 127.0.0.1:9000:9000
     links:
